@@ -1,0 +1,25 @@
+{
+	"name": "DS_SQLSINK",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SINK_SQL",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"FILENAME": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "SALES",
+			"table": {
+				"value": "@dataset().FILENAME",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
